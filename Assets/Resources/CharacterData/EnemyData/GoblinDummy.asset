@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 346ba01e3a43fdd458d162466df731ce, type: 3}
+  m_Name: GoblinDummy
+  m_EditorClassIdentifier: 
+  <CharacterName>k__BackingField: Braindead Goblin
+  <BaseStats>k__BackingField:
+    HP: 5
+    AP: 0
+    MOVE: 1
+    STR: 8
+    DEX: 1
+    CON: 8
+    INT: 0
+    WIS: 0
+    CHA: 2
+  <StartingAbilities>k__BackingField:
+  - {fileID: 11400000, guid: 71662fbdb8471e64e8ac63ad489fe2b2, type: 2}

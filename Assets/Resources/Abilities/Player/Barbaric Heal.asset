@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 035c85f260c8459449657d1874900c0a, type: 3}
+  m_Name: Barbaric Heal
+  m_EditorClassIdentifier: 
+  shape: {fileID: 11400000, guid: df64471c2bd9f544b991a6271b0b5de7, type: 2}
+  flow: {fileID: 11400000, guid: abc2afb024cab044ab9f11e10e5983ae, type: 2}
+  behaviour: {fileID: 11400000, guid: 6cbff7586f9689947b731ef36d91c094, type: 2}
+  targetFilter: {fileID: 0}
+  skipCombatRoll: 1
+  rotateTargeting: 0
+  ignoreStartSelection: 0
+  ignoreTargetTargeting: 0
+  throughObstacles: 0
+  abilityStats:
+    AbilityName: Barbaric Heal
+    AbilityDescription: 
+    APCost: 8
+    Damage: 0
+    Healing: 4
+    Range: 0
+    RangedGap: 0
+    ShapeLength: 0
+    ShapeWidth: 0
+    TargetSelf: 1
+    TargetAllies: 1
+    TargetEnemies: 0

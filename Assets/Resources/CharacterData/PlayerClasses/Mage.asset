@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feb1ea97f1c09c043bf291e6f23c96ce, type: 3}
+  m_Name: Mage
+  m_EditorClassIdentifier: 
+  <CharacterName>k__BackingField: Mage
+  <BaseStats>k__BackingField:
+    HP: 10
+    AP: 3
+    MOVE: 4
+    STR: 6
+    DEX: 11
+    CON: 8
+    INT: 14
+    WIS: 16
+    CHA: 14
+  <StartingAbilities>k__BackingField:
+  - {fileID: 11400000, guid: 4037ff128784a2c48bec8d4e4abddf9d, type: 2}
+  - {fileID: 11400000, guid: bf20c8a9f0a17af4db56177211279ec5, type: 2}
+  - {fileID: 11400000, guid: 617a04dc493c026498e62716169ce4d8, type: 2}
+  <ClassIcon>k__BackingField: {fileID: 0}
