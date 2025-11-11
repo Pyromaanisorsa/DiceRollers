@@ -14,7 +14,7 @@ When players roll a connected dice (GoDice D20), the roll result can be captured
 This setup allows the same game logic to function regardless of whether the physical dice is nearby or remote.
 
 ## 🧱 Architecture Overview
-
+![System Architecture](DiceIntegrationChart.png)
 Figure: Data flow between Unity, AWS, and the Bluetooth dice via a Python bridge.
 
 ### Local TCP Mode
