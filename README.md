@@ -1,13 +1,13 @@
 # DiceRollers
-A Unity-based 2D RPG board game featuring a GoDice Bluetooth dice integration that works both locally (via TCP) and online (via AWS cloud).
+A Unity-based 2D RPG board game featuring a GoDice D20 Bluetooth dice integration that works both locally (via TCP) and online (via AWS cloud).
 Built to test integrating GoDice to video game experience and use it in-game logic/events. Game systems built with modularity, scalability, data-driveness and editor-friendliness in mind.
 
 ## 🕹️ Overview
 
-This project was designed to explore how to integrate physical game element (Bluetooth die) to a digital game world and test solution's effectiveness.
+This project was designed to explore how to integrate physical game element (Bluetooth die) to a digital game world and test how effective and reliable the integration was.
 Other goal was to test how the physical element affect the video game experience.
 
-When players roll a connected dice (GoDice D20), the roll result can be captured locally or through AWS, depending on the setup:
+When players roll a connected dice, the roll result can be captured locally or through AWS, depending on the setup:
 - Local mode: Game connects directly to a local Python TCP server and the server passes roll values to game.
 - Online mode: Roll results are sent to AWS via a Python app, stored in DynamoDB, and retrieved by Unity using HTTP polling (UnityWebRequest).
 
@@ -21,7 +21,7 @@ Figure: Data flow between Unity, AWS, and the Bluetooth dice via a Python bridge
 
 1. Unity starts a local Python TCP server at runtime (executable).
 2. The server listens for dice state updates from the connected GoDice device.
-3. Roll results are streamed to the game instantly, allowing near-zero latency play.
+3. Roll results are streamed to the game instantly whenever the dice state changes, allowing near-zero latency play.
 
 ### Cloud AWS Mode
 1. Unity uses AWS API Gateway (HTTP) to access Lambda endpoints:
