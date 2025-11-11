@@ -26,6 +26,7 @@ Figure: Data flow between Unity, AWS, and the Bluetooth dice via a Python bridge
 2. Player sends message to server to connect the nearest GoDice.
 3. The server listens for dice state updates from the connected GoDice device.
 4. Roll results are streamed to the game instantly whenever the dice state changes, allowing near-zero latency play.
+5. Game uses received roll value only when a local roll is currently active and waiting for roll result.
 
 ### Cloud AWS Mode (If no dice connected locally)
 1. Unity uses AWS API Gateway (HTTP) to access Lambda endpoints:
