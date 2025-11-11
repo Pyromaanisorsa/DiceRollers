@@ -36,7 +36,7 @@ Figure: Data flow between Unity, AWS, and the Bluetooth dice via a Python bridge
 - submitRollResult – used by the Python app to submit the roll outcome
 
 3. Unity polls for while until it receives the final roll value, then applies it in-game.
-- checkRollResult – polled by Unity to check if a result is available
+- checkRollResult – polled by Unity to check if a result is available for roll request
 
 Unity starts polling for result right after request creating was successful. Players have x-amount of time to send the rollValue via Python App before polling timer runs out.
 
