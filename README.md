@@ -11,8 +11,6 @@ When players roll a connected dice, the roll result can be captured locally or t
 - Local mode: Game connects directly to a local Python TCP server and the server passes roll values to game.
 - Online mode: Roll results are sent to AWS via a Python app, stored in DynamoDB, and retrieved by Unity using HTTP polling (UnityWebRequest).
 
-This setup allows the same game logic to function regardless of whether the physical dice is nearby or remote.
-
 ## 🧱 Architecture Overview
 ![System Architecture](DiceIntegrationChart.png)
 Figure: Data flow between Unity, AWS, and the Bluetooth dice via a Python bridge.
@@ -20,8 +18,9 @@ Figure: Data flow between Unity, AWS, and the Bluetooth dice via a Python bridge
 ### Local TCP Mode
 
 1. Unity starts a local Python TCP server at runtime (executable).
-2. The server listens for dice state updates from the connected GoDice device.
-3. Roll results are streamed to the game instantly whenever the dice state changes, allowing near-zero latency play.
+2. Player sends message to server to connect the nearest GoDice.
+3. The server listens for dice state updates from the connected GoDice device.
+4. Roll results are streamed to the game instantly whenever the dice state changes, allowing near-zero latency play.
 
 ### Cloud AWS Mode
 1. Unity uses AWS API Gateway (HTTP) to access Lambda endpoints:
