@@ -44,7 +44,7 @@ If Unity doesn't receive the result in time in either mode; it will randomly gen
 
 For more details on how the Python TCP server & app work, check their own [repository](https://github.com/Pyromaanisorsa/DiceRollerPython).
 
-🧩 Game Systems
+## 🧩 Game Systems
 AbilityData Structure
 - Component-driven architecture using classes like AbilityFlow, AbilityShape, and AbilityBehaviour.
 - New abilities can be added simply by composing components rather than writing new code for each ability.
