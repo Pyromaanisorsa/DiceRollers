@@ -13,6 +13,26 @@ When players roll a connected dice (GoDice D20), the roll result can be captured
 
 This setup allows the same game logic to function regardless of whether the physical dice is nearby or remote.
 
+## 🧱 Architecture Overview
+
+Figure: Data flow between Unity, AWS, and the Bluetooth dice via a Python bridge.
+
+# Local TCP Mode
+
+1. Unity starts a local Python TCP server at runtime (executable).
+2. The server listens for dice state updates from the connected GoDice device.
+3. Roll results are streamed to the game instantly, allowing near-zero latency play.
+
+# Cloud AWS Mode
+1. Unity uses AWS API Gateway (HTTP) to access Lambda endpoints:
+- requestRoll – creates a roll request entry in DynamoDB
+
+2. Python app connects to Bluetooth dice and sends results to AWS tagged with the player’s username.
+- submitRollResult – used by the Python app to submit the roll outcome
+
+3. Unity polls for while until it receives the final roll value, then applies it in-game.
+- checkRollResult – polled by Unity to check if a result is available
+
 ## 🧾 License
 
 This project is licensed under the **Creative Commons Attribution–NonCommercial 4.0 International License (CC BY-NC 4.0)**.
