@@ -4,13 +4,10 @@ Built to test integrating GoDice to video game experience and use it in-game log
 
 ## 🕹️ Overview
 
-This project was designed to explore how physical game elements (like a real Bluetooth die) can seamlessly integrate with a digital game world.
-
+This project was designed to explore how to integrate physical game element (Bluetooth die) to a digital game world and test solution's effectiveness.
 When players roll a connected dice (GoDice D20), the roll result can be captured locally or through AWS, depending on the setup:
-
-Local mode: Game connects directly to a local Python TCP server.
-
-Online mode: Roll results are sent to AWS via a Python app, stored in DynamoDB, and retrieved by Unity using HTTP polling.
+- Local mode: Game connects directly to a local Python TCP server and the server passes roll values to game.
+- Online mode: Roll results are sent to AWS via a Python app, stored in DynamoDB, and retrieved by Unity using HTTP polling (UnityWebRequest).
 
 This setup allows the same game logic to function regardless of whether the physical dice is nearby or remote.
 
