@@ -5,6 +5,8 @@ Built to test integrating GoDice to video game experience and use it in-game log
 <img src="gameview.png" alt="Screenshot of the Unity project" width="810"/>
 Figure: Screenshot from the Unity project.
 
+[Link to companion app's / server's repository, used to integrate the GoDice to Unity.](https://github.com/Pyromaanisorsa/DiceRollerPython).
+
 ## 🕹️ Overview
 
 This project was designed to explore how to integrate physical game element (Bluetooth die) to a digital game world and test how effective and reliable the integration was.
