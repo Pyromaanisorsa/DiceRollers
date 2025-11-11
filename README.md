@@ -2,6 +2,9 @@
 A Unity-based 2D RPG board game featuring a GoDice D20 Bluetooth dice integration that works both locally (via TCP) and online (via AWS cloud).
 Built to test integrating GoDice to video game experience and use it in-game logic/events. Game systems built with modularity, scalability, data-driveness and editor-friendliness in mind.
 
+![Screenshot of Game](gameview.png)
+Figure: Screenshot from the Unity project.
+
 ## 🕹️ Overview
 
 This project was designed to explore how to integrate physical game element (Bluetooth die) to a digital game world and test how effective and reliable the integration was.
