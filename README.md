@@ -44,6 +44,20 @@ If Unity doesn't receive the result in time in either mode; it will randomly gen
 
 For more details on how the Python TCP server & app work, check their own [repository](https://github.com/Pyromaanisorsa/DiceRollerPython).
 
+🧩 Game Systems
+AbilityData Structure
+- Component-driven architecture using classes like AbilityFlow, AbilityShape, and AbilityBehaviour.
+- New abilities can be added simply by composing components rather than writing new code for each ability.
+- Currently each ability is usable by both players and enemy AI.
+
+Level Editor Tools
+- Custom Unity Editor window visualizes level tiles and blocking areas.
+- Designers can mark blocked tiles interactively, which are then serialized into level data.
+
+EnemyAI
+- Very simple currently: either moves closer to player until in range of their single ability or uses their ability to attack.
+- 
+  
 ## 🧾 License
 
 This project is licensed under the **Creative Commons Attribution–NonCommercial 4.0 International License (CC BY-NC 4.0)**.
