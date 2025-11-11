@@ -2,6 +2,18 @@
 A Unity-based 2D RPG board game featuring a GoDice Bluetooth dice integration that works both locally (via TCP) and online (via AWS cloud).
 Built to test integrating GoDice to video game experience and use it in-game logic/events. Game systems built with modularity, scalability, data-driveness and editor-friendliness in mind.
 
+#🕹️ Overview
+
+This project was designed to explore how physical game elements (like a real Bluetooth die) can seamlessly integrate with a digital game world.
+
+When players roll a connected dice (GoDice D20), the roll result can be captured locally or through AWS, depending on the setup:
+
+Local mode: Game connects directly to a local Python TCP server.
+
+Online mode: Roll results are sent to AWS via a Python app, stored in DynamoDB, and retrieved by Unity using HTTP polling.
+
+This setup allows the same game logic to function regardless of whether the physical dice is nearby or remote.
+
 ## 🧾 License
 
 This project is licensed under the **Creative Commons Attribution–NonCommercial 4.0 International License (CC BY-NC 4.0)**.
