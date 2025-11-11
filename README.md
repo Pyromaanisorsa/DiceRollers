@@ -35,7 +35,7 @@ Figure: Data flow between Unity, AWS, and the Bluetooth dice via a Python bridge
 Unity starts polling for result right after request creating was successful. Players have x-amount of time to send the rollValue via Python App before polling timer runs out.
 If Unity doesn't receive the result in time in either mode; it will randomly generate number between 1-20 and use that as roll result for game logic.
 
-For more details on how the TCP server & Python APP work, check their own repository [TCP server & Python app repo](https://github.com/Pyromaanisorsa/DiceRollerPython)
+For more details on how the Python TCP server & app work, check their own [repository].(https://github.com/Pyromaanisorsa/DiceRollerPython)
 
 ## 🧾 License
 
