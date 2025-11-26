@@ -79,15 +79,21 @@ Manager Classes
 6. Click on one of the 5 difficulty buttons to spawn enemies and start combat.
 7. Play the game!
 
-🧩 Building / enabling AWS Cloud dice roll option (Free AWS is enough for this demo)
+🧩 Building / enabling AWS Cloud dice roll option (Companion App required for this OR write simple script to simulate dice rolls to sent to AWS)
 1. Create 3 lambda functions (codes in /LambdaCode folder) and create & add to them IAM role(s) to full access to DynamoDB (AmazonDynamoDBFullAccess).
 2. Create HTTP API-gateway and create a route for each Lambda function, connect Lambda function trigger to these routes.
-3. In Scripts/Managers/RollManager.cs add urls to your requestRoll and checkRollResult routes (rows 48 & 49)
+3. In Scripts/Managers/RollManager.cs add urls to your requestRoll and checkRollResult gateway routes (rows 48 & 49)
 ````
     private static string requestRollUrl = "YOUR-REQUESTROLL HTTP GATEWAY URL+ROUTE";
     private static string checkResultUrl = "YOUR-CHECKROLLRESULT HTTP GATEWAY URL+ROUTE";
 ````
-  
+4. In the companion app's app.py file add urls to your submitRollResult gateway route (row 10)
+5. ````
+   apiurl = "YOUR-SUBMITROLLRESULT HTTP GATEWAY URL+ROUTE"
+   ````
+6. Create DynamoDB table called RollRequests (if not that name; you have to rename RollRequests in Lambda function code). Make partition key playerID (S).
+7. You should now have AWS backend set for sending dice rolls to game via AWS.
+
 ## 🧾 License
 
 This project is licensed under the **Creative Commons Attribution–NonCommercial 4.0 International License (CC BY-NC 4.0)**.
