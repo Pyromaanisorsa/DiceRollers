@@ -70,7 +70,7 @@ Manager Classes
 - GoDiceManager: starts the local TCP-server to connect GoDice locally and communicate with it
 - GridManager: manages game board and tiles states, also helps abilities by giving list of targetable tiles based of abilityData parameters + abilityShape component
 
-🧩 Running the game
+## 🧩 Running the game
 1. Clone the repo and open the Unity project.
 2. Press Play in Unity Editor or build a build of the project and run that to start the game.
 3. Editor / build will start the server at start with GoDiceManager isntance.
@@ -79,7 +79,7 @@ Manager Classes
 6. Click on one of the 5 difficulty buttons to spawn enemies and start combat.
 7. Play the game!
 
-🧩 Building / enabling AWS Cloud dice roll option (Companion App required for this OR write simple script to simulate dice rolls to sent to AWS)
+## 🧩 Building / enabling AWS Cloud dice roll option (Companion App required for this OR write simple script to simulate dice rolls to sent to AWS)
 1. Create 3 lambda functions (codes in /LambdaCode folder) and create & add to them IAM role(s) to full access to DynamoDB (AmazonDynamoDBFullAccess).
 2. Create HTTP API-gateway and create a route for each Lambda function, connect Lambda function trigger to these routes.
 3. In Scripts/Managers/RollManager.cs add urls to your requestRoll and checkRollResult gateway routes (rows 48 & 49)
