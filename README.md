@@ -45,6 +45,8 @@ If Unity doesn't receive the result in time in either mode; it will randomly gen
 For more details on how the Python TCP server & app work, check their own [repository](https://github.com/Pyromaanisorsa/DiceRollerPython).
 
 ## 🧩 Game Systems
+Note. the game systems are left unfinished because the goal was to make a decent test video game platform for dice integration, not to make complete game. Still the game structure has been build with scalability, performance and modularity in mind. Everything that needs to be edited has been made editor friendly (level building, creating new enemies+abilities) and room has been left to add future features or to expand current features.
+
 AbilityData Structure
 - Component-driven architecture using classes like AbilityFlow, AbilityShape, and AbilityBehaviour.
 - New abilities can be added simply by composing components rather than writing new code for each ability.
@@ -53,10 +55,6 @@ AbilityData Structure
 Level Editor Tools
 - Custom Unity Editor window visualizes level tiles and blocking areas.
 - Designers can mark blocked tiles interactively, which are then serialized into level data.
-
-EnemyAI
-- Very simple currently: either moves closer to player until in range of their single ability or uses their ability to attack.
-- Future proofing: enemy's have instance of enemyBehaviourAI class that could be implement to affect their decision making eg. fear or anger value.
 
 Data Structure
 - Modular component based (playerCombat -> playerStats -> abilitySlots -> abilityData)
@@ -69,6 +67,10 @@ Manager Classes
 - CombatManager: manages turn flow and order, also every action goes through this manager
 - GoDiceManager: starts the local TCP-server to connect GoDice locally and communicate with it
 - GridManager: manages game board and tiles states, also helps abilities by giving list of targetable tiles based of abilityData parameters + abilityShape component
+
+EnemyAI
+- Very simple currently: either moves closer to player until in range of their single ability or uses their ability to attack.
+- Future proofing: enemy's have instance of enemyBehaviourAI class that could be implement to affect their decision making eg. fear or anger value.
 
 ## 🧩 Running the game
 1. Clone the repo and open the Unity project.
@@ -88,11 +90,12 @@ Manager Classes
     private static string checkResultUrl = "YOUR-CHECKROLLRESULT HTTP GATEWAY URL+ROUTE";
 ````
 4. In the companion app's app.py file add urls to your submitRollResult gateway route (row 10)
-5. ````
+   ````
    apiurl = "YOUR-SUBMITROLLRESULT HTTP GATEWAY URL+ROUTE"
    ````
-6. Create DynamoDB table called RollRequests (if not that name; you have to rename RollRequests in Lambda function code). Make partition key playerID (S).
-7. You should now have AWS backend set for sending dice rolls to game via AWS.
+5. Create DynamoDB table called RollRequests (if not that name; you have to rename RollRequests in Lambda function code). Make partition key playerID (S).
+6. You should now have AWS backend set for sending dice rolls to game via AWS.
++. If you prefer to simulate dice rolls via simple script; simply send webrequest to the submitRollResult route.
 
 ## 🧾 License
 
