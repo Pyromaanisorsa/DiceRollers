@@ -62,6 +62,7 @@ Data Structure
 - Modular component based (playerCombat -> playerStats -> abilitySlots -> abilityData)
 - Manager classes (eg. CombatManager, GridManager) manage big parts of the game, which are singletons so any object can use them.
 - Room for new features and improvements eg. confirm/decline feature for moving/using ability, abilityData structure, abilityFlow structure (currently it just decides which tiles can be chosen, but could be used to make more complicated ability targeting modes eg. multi tile target select)
+- Also contains unused Node-based dialogue system.
 
 Manager Classes
 - RollManager: starts and runs diceRoll events in game logic
@@ -78,9 +79,14 @@ Manager Classes
 6. Click on one of the 5 difficulty buttons to spawn enemies and start combat.
 7. Play the game!
 
-🧩 Building / enabling AWS Cloud dice roll option
-1. Create 3 lambda functions (codes in /LambdaCode folder) and create & add to them IAM role to full access to DynamoDB.
-2. 
+🧩 Building / enabling AWS Cloud dice roll option (Free AWS is enough for this demo)
+1. Create 3 lambda functions (codes in /LambdaCode folder) and create & add to them IAM role(s) to full access to DynamoDB (AmazonDynamoDBFullAccess).
+2. Create HTTP API-gateway and create a route for each Lambda function, connect Lambda function trigger to these routes.
+3. In Scripts/Managers/RollManager.cs add urls to your requestRoll and checkRollResult routes (rows 48 & 49)
+````
+    private static string requestRollUrl = "YOUR-REQUESTROLL HTTP GATEWAY URL+ROUTE";
+    private static string checkResultUrl = "YOUR-CHECKROLLRESULT HTTP GATEWAY URL+ROUTE";
+````
   
 ## 🧾 License
 
