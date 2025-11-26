@@ -89,13 +89,13 @@ EnemyAI
     private static string requestRollUrl = "YOUR-REQUESTROLL HTTP GATEWAY URL+ROUTE";
     private static string checkResultUrl = "YOUR-CHECKROLLRESULT HTTP GATEWAY URL+ROUTE";
 ````
-4. In the companion app's app.py file add urls to your submitRollResult gateway route (row 10)
+4. In the companion app's app.py file (or simple simulation script you made) add urls to your submitRollResult gateway route (row 10)
    ````
    apiurl = "YOUR-SUBMITROLLRESULT HTTP GATEWAY URL+ROUTE"
    ````
 5. Create DynamoDB table called RollRequests (if not that name; you have to rename RollRequests in Lambda function code). Make partition key playerID (S).
 6. You should now have AWS backend set for sending dice rolls to game via AWS.
-+. If you prefer to simulate dice rolls via simple script; simply send webrequest to the submitRollResult route.
+<br/>+. If you prefer to simulate dice rolls via simple script; simply send webrequest to the submitRollResult route.
 
 ## 🧾 License
 
