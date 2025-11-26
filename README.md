@@ -47,15 +47,6 @@ For more details on how the Python TCP server & app work, check their own [repos
 ## 🧩 Game Systems
 Note. the game systems are left unfinished because the goal was to make a decent test video game platform for dice integration, not to make complete game. Still the game structure has been build with scalability, performance and modularity in mind. Everything that needs to be edited has been made editor friendly (level building, creating new enemies+abilities) and room has been left to add future features or to expand current features.
 
-AbilityData Structure
-- Component-driven architecture using classes like AbilityFlow, AbilityShape, and AbilityBehaviour.
-- New abilities can be added simply by composing components rather than writing new code for each ability.
-- Currently each ability is usable by both players and enemy AI.
-
-Level Editor Tools
-- Custom Unity Editor window visualizes level tiles and blocking areas.
-- Designers can mark blocked tiles interactively, which are then serialized into level data.
-
 Data Structure
 - Modular component based (playerCombat -> playerStats -> abilitySlots -> abilityData)
 - Manager classes (eg. CombatManager, GridManager) manage big parts of the game, which are singletons so any object can use them.
@@ -67,6 +58,15 @@ Manager Classes
 - CombatManager: manages turn flow and order, also every action goes through this manager
 - GoDiceManager: starts the local TCP-server to connect GoDice locally and communicate with it
 - GridManager: manages game board and tiles states, also helps abilities by giving list of targetable tiles based of abilityData parameters + abilityShape component
+
+AbilityData Structure
+- Component-driven architecture using classes like AbilityFlow, AbilityShape, and AbilityBehaviour.
+- New abilities can be added simply by composing components rather than writing new code for each ability.
+- Currently each ability is usable by both players and enemy AI.
+
+Level Editor Tools
+- Custom Unity Editor window visualizes level tiles and blocking areas.
+- Designers can mark blocked tiles interactively, which are then serialized into level data.
 
 EnemyAI
 - Very simple currently: either moves closer to player until in range of their single ability or uses their ability to attack.
