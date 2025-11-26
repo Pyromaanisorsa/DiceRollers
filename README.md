@@ -6,7 +6,6 @@ Built to test integrating GoDice to video game experience and use it in-game log
 <img src="gameview.png" alt="Screenshot of the Unity project" width="810"/>
 Figure: Screenshot of the Unity project.
 
-
 ## 🕹️ Overview
 
 This project was designed to explore how to integrate physical game element (Bluetooth die) to a digital game world and test how effective and reliable the integration was.
@@ -23,10 +22,11 @@ Figure: Data flow between Unity, AWS, and the Bluetooth dice via a Python bridge
 ### Local TCP Mode (If dice connected locally)
 
 1. Unity starts a local Python TCP server at runtime (executable).
-2. Player sends message to server to connect the nearest GoDice.
-3. The server listens for dice state updates from the connected GoDice device.
-4. Roll results are streamed to the game instantly whenever the dice state changes, allowing near-zero latency play.
-5. Game uses received roll value only when a local roll is currently active and waiting for roll result.
+2. Unity starts TCP-connection to the server.
+3. Player sends message to server to connect the nearest GoDice.
+4. The server listens for dice state updates from the connected GoDice device.
+5. Roll results are streamed to the game instantly whenever the dice state changes, allowing near-zero latency play.
+6. Game uses received roll value only when a local roll is currently active and waiting for roll result.
 
 ### Cloud AWS Mode (If no dice connected locally)
 1. Unity uses AWS API Gateway (HTTP) to access Lambda endpoints:
@@ -56,9 +56,18 @@ Level Editor Tools
 
 EnemyAI
 - Very simple currently: either moves closer to player until in range of their single ability or uses their ability to attack.
-- 
+- Future proofing: enemy's have instance of enemyBehaviourAI class that could be implement to affect their decision making eg. fear or anger value.
 
-##  For Developers
+Data Structure
+- Modular component based (playerCombat -> playerStats -> abilitySlots -> abilityData)
+- Manager classes (eg. CombatManager, GridManager) manage big parts of the game, which are singletons so any object can use them.
+- Room for new features and improvements eg. confirm/decline feature for moving/using ability, abilityData structure, abilityFlow structure (currently it just decides which tiles can be chosen, but could be used to make more complicated ability targeting modes eg. multi tile target select)
+
+Manager Classes
+- RollManager: starts and runs diceRoll events in game logic
+- CombatManager: manages turn flow and order, also every action goes through this manager
+- GoDiceManager: starts the local TCP-server to connect GoDice locally and communicate with it
+- GridManager: manages game board and tiles states, also helps abilities by giving list of targetable tiles based of abilityData parameters + abilityShape component
 
 🧩 Running the game
 1. Clone the repo and open the Unity project.
@@ -70,7 +79,8 @@ EnemyAI
 7. Play the game!
 
 🧩 Building / enabling AWS Cloud dice roll option
-1. TMI
+1. Create 3 lambda functions (codes in /LambdaCode folder) and create & add to them IAM role to full access to DynamoDB.
+2. 
   
 ## 🧾 License
 
