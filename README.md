@@ -1,11 +1,11 @@
 # DiceRollers
 A Unity-based 2D RPG board game featuring a GoDice D20 Bluetooth dice integration that works both locally (via TCP) and online (via AWS cloud).
 Built to test integrating GoDice to video game experience and use it in-game logic/events. Game systems built with modularity, scalability, data-driveness and editor-friendliness in mind.
+<br/>[Link to companion app's / server's repository, used to integrate the GoDice to Unity.](https://github.com/Pyromaanisorsa/DiceRollerPython).
 
 <img src="gameview.png" alt="Screenshot of the Unity project" width="810"/>
 Figure: Screenshot of the Unity project.
 
-[Link to companion app's / server's repository, used to integrate the GoDice to Unity.](https://github.com/Pyromaanisorsa/DiceRollerPython).
 
 ## 🕹️ Overview
 
