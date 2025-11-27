@@ -5,6 +5,8 @@ Built to test integrating GoDice to video game experience and use it in-game log
 
 <img src="gameview.png" alt="Screenshot of the Unity project" width="810"/>
 Figure: Screenshot of the Unity project.
+<img src="nopanheittoREAL.jpg" alt="Screenshot of the Unity project" width="810"/>
+Figure: Screenshot of the Unity project after rolling physical dice.
 
 ## 🕹️ Overview
 
