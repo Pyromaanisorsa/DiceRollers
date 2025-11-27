@@ -75,7 +75,7 @@ EnemyAI
 ## 🧩 Running the game
 1. Clone the repo and open the Unity project.
 2. Press Play in Unity Editor or build a build of the project and run that to start the game.
-3. Editor / build will start the server at start with GoDiceManager isntance.
+3. Editor / build will start the server (diceServer executable) at start with GoDiceManager instance.
 4. Type 3-20 characters long playerID to use ingame and select one of the 3 classes.
 5. Connect the dice BEFORE SELECTING DIFFICULTY with the connect button at top left corner of the screen. (if planning to use local dice)
 6. Click on one of the 5 difficulty buttons to spawn enemies and start combat.
