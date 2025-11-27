@@ -100,6 +100,11 @@ EnemyAI
 <br/>+. If you prefer to simulate dice rolls via simple script; simply send webrequest to the submitRollResult route.
 <br/>(Check companion repo's app.py rows 145-170 if you need example.)
 
+## 🕹️ Bonus
+Here's a UML diagram of most of the important classes in the project, might help open up the project structure to you.
+![UML Diagram of most of the important classes in the Unity project](UMLDiagrammi.png)
+
+
 ## 🧾 License
 
 This project is licensed under the **Creative Commons Attribution–NonCommercial 4.0 International License (CC BY-NC 4.0)**.
