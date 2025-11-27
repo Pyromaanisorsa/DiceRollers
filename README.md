@@ -96,6 +96,7 @@ EnemyAI
 5. Create DynamoDB table called RollRequests (if not that name; you have to rename RollRequests in Lambda function code). Make partition key playerID (S).
 6. You should now have AWS backend set for sending dice rolls to game via AWS.
 <br/>+. If you prefer to simulate dice rolls via simple script; simply send webrequest to the submitRollResult route.
+<br/>(Check companion repo's app.py rows 145-170 if you need example.)
 
 ## 🧾 License
 
