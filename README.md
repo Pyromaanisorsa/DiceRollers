@@ -1,5 +1,5 @@
 # DiceRollers
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/2rH5BQ8cg3A/0.jpg)](https://www.youtube.com/watch?v=2rH5BQ8cg3A]<br/>
+[Link to 2-minute long demo video of the project](https://www.youtube.com/watch?v=2rH5BQ8cg3A)<br/>
 
 A Unity-based 2D RPG board game featuring a GoDice D20 Bluetooth dice integration that works both locally (via TCP) and online (via AWS cloud).
 Built to test integrating GoDice to video game experience and use it in-game logic/events. Game systems built with modularity, scalability, data-driveness and editor-friendliness in mind.
